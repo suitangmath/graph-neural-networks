@@ -207,7 +207,7 @@ class SelectionGNN(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -632,7 +632,7 @@ class LocalActivationGNN(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -962,7 +962,7 @@ class LocalGNN(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -1317,7 +1317,7 @@ class SpectralGNN(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -1619,7 +1619,7 @@ class NodeVariantGNN(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -1855,7 +1855,7 @@ class EdgeVariantGNN(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -2089,7 +2089,7 @@ class LocalEdgeNet(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -2391,7 +2391,7 @@ class ARMAfilterGNN(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -2703,7 +2703,7 @@ class LocalARMA(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -3033,7 +3033,7 @@ class AggregationGNN(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -3409,7 +3409,7 @@ class MultiNodeAggregationGNN(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -3686,7 +3686,7 @@ class GraphAttentionNetwork(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -3936,7 +3936,7 @@ class GraphConvolutionAttentionNetwork(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
@@ -4205,7 +4205,7 @@ class EdgeVariantAttention(nn.Module):
             # we end up calling the function Utils.graphTools.permDegree.
             # We need to be sure that the function 'perm' + self.reorder
             # is available in the Utils.graphTools module.
-            self.permFunction = eval('Utils.graphTools.perm' + order)
+            self.permFunction = eval('alegnn.utils.graphTools.perm' + order)
         else:
             self.permFunction = alegnn.utils.graphTools.permIdentity
             # This is overriden if coarsening is selected, since the ordering
