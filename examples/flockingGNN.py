@@ -455,7 +455,7 @@ if doLogging:
     logger = Visualizer(logsTB, name='visualResults')
     
 #\\\ Number of agents at test time
-nAgentsTest = np.linspace(nAgents, nAgentsMax, num = nSimPoints,dtype = np.int)
+nAgentsTest = np.linspace(nAgents, nAgentsMax, num = nSimPoints,dtype = np.int32)
 nAgentsTest = np.unique(nAgentsTest).tolist()
 nSimPoints = len(nAgentsTest)
 writeVarValues(varsFile, {'nAgentsTest': nAgentsTest}) # Save list

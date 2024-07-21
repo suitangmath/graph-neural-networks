@@ -1138,16 +1138,16 @@ class LocalGNN(nn.Module):
             # Change the node number to accommodate the new order
             nodes = self.order.index(nodes)
             # If it's int, make it a list and an array
-            nodes = np.array([nodes], dtype=np.int)
+            nodes = np.array([nodes], dtype=np.int32)
             # And repeat for the number of batches
             nodes = np.tile(nodes, batchSize)
         if type(nodes) is list:
             newNodes = [self.order.index(n) for n in nodes]
-            nodes = np.array(newNodes, dtype = np.int)
+            nodes = np.array(newNodes, dtype = np.int32)
         elif type(nodes) is np.ndarray:
             newNodes = np.array([np.where(np.array(self.order) == n)[0][0] \
                                                                 for n in nodes])
-            nodes = newNodes.astype(np.int)
+            nodes = newNodes.astype(np.int32)
         # Now, nodes is an np.int np.ndarray with shape batchSize
         
         # Build the selection matrix
@@ -2197,16 +2197,16 @@ class LocalEdgeNet(nn.Module):
             # Change the node number to accommodate the new order
             nodes = self.order.index(nodes)
             # If it's int, make it a list and an array
-            nodes = np.array([nodes], dtype=np.int)
+            nodes = np.array([nodes], dtype=np.int32)
             # And repeat for the number of batches
             nodes = np.tile(nodes, batchSize)
         if type(nodes) is list:
             newNodes = [self.order.index(n) for n in nodes]
-            nodes = np.array(newNodes, dtype = np.int)
+            nodes = np.array(newNodes, dtype = np.int32)
         elif type(nodes) is np.ndarray:
             newNodes = np.array([np.where(np.array(self.order) == n)[0][0] \
                                                                 for n in nodes])
-            nodes = newNodes.astype(np.int)
+            nodes = newNodes.astype(np.int32)
         # Now, nodes is an np.int np.ndarray with shape batchSize
         
         # Build the selection matrix
@@ -2874,16 +2874,16 @@ class LocalARMA(nn.Module):
             # Change the node number to accommodate the new order
             nodes = self.order.index(nodes)
             # If it's int, make it a list and an array
-            nodes = np.array([nodes], dtype=np.int)
+            nodes = np.array([nodes], dtype=np.int32)
             # And repeat for the number of batches
             nodes = np.tile(nodes, batchSize)
         if type(nodes) is list:
             newNodes = [self.order.index(n) for n in nodes]
-            nodes = np.array(newNodes, dtype = np.int)
+            nodes = np.array(newNodes, dtype = np.int32)
         elif type(nodes) is np.ndarray:
             newNodes = np.array([np.where(np.array(self.order) == n)[0][0] \
                                                                 for n in nodes])
-            nodes = newNodes.astype(np.int)
+            nodes = newNodes.astype(np.int32)
         # Now, nodes is an np.int np.ndarray with shape batchSize
         
         # Build the selection matrix
@@ -4599,16 +4599,16 @@ class GraphRecurrentNN(nn.Module):
             # Change the node number to accommodate the new order
             nodes = self.order.index(nodes)
             # If it's int, make it a list and an array
-            nodes = np.array([nodes], dtype=np.int)
+            nodes = np.array([nodes], dtype=np.int32)
             # And repeat for the number of batches
             nodes = np.tile(nodes, batchSize)
         if type(nodes) is list:
             newNodes = [self.order.index(n) for n in nodes]
-            nodes = np.array(newNodes, dtype = np.int)
+            nodes = np.array(newNodes, dtype = np.int32)
         elif type(nodes) is np.ndarray:
             newNodes = np.array([np.where(np.array(self.order) == n)[0][0] \
                                                                 for n in nodes])
-            nodes = newNodes.astype(np.int)
+            nodes = newNodes.astype(np.int32)
         # Now, nodes is an np.int np.ndarray with shape batchSize
         
         # Build the selection matrix
@@ -4922,16 +4922,16 @@ class GatedGraphRecurrentNN(nn.Module):
             # Change the node number to accommodate the new order
             nodes = self.order.index(nodes)
             # If it's int, make it a list and an array
-            nodes = np.array([nodes], dtype=np.int)
+            nodes = np.array([nodes], dtype=np.int32)
             # And repeat for the number of batches
             nodes = np.tile(nodes, batchSize)
         if type(nodes) is list:
             newNodes = [self.order.index(n) for n in nodes]
-            nodes = np.array(newNodes, dtype = np.int)
+            nodes = np.array(newNodes, dtype = np.int32)
         elif type(nodes) is np.ndarray:
             newNodes = np.array([np.where(np.array(self.order) == n)[0][0] \
                                                                 for n in nodes])
-            nodes = newNodes.astype(np.int)
+            nodes = newNodes.astype(np.int32)
         # Now, nodes is an np.int np.ndarray with shape batchSize
         
         # Build the selection matrix

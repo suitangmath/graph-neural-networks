@@ -187,7 +187,7 @@ class Trainer:
                 batchSize[-1] -= 1
         # If they fit evenly, then just do so.
         else:
-            nBatches = np.int(nTrain/batchSize)
+            nBatches = int(nTrain/batchSize)
             batchSize = [batchSize] * nBatches
         # batchIndex is used to determine the first and last element of each
         # batch.

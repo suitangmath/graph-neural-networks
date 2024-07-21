@@ -522,7 +522,7 @@ def computeNeighborhood(S, K, N = 'all', nb = 'all', outputType = 'list'):
                                 )]
         # And now that every element in the list paddedNeighbors has the same
         # length, we can make it a matrix
-        neighbors = np.array(paddedNeighbors, dtype = np.int)
+        neighbors = np.array(paddedNeighbors, dtype = np.int32)
 
     return neighbors
 
@@ -830,7 +830,7 @@ def createGraph(graphType, N, graphOptions):
                 else:
                     W[pind[sortedIndices[0:np.min(inds_equallyfar)]],n] = 1
                         # choose each nearer than farthest-to-be-chosen
-                    r=np.random.permutation(len(inds_equallyfar)).astype(np.int)
+                    r=np.random.permutation(len(inds_equallyfar)).astype(np.int32)
                         # choose randomly between the ones that are as far as 
                         # be-chosen
                         
@@ -847,7 +847,7 @@ def createGraph(graphType, N, graphOptions):
                         freeind[n] = 0
                         freeind[A[j]] = 1
                         B = np.nonzero(freeind)[0]
-                        r = np.floor(np.random.rand()*len(B)).astype(np.int)
+                        r = np.floor(np.random.rand()*len(B)).astype(np.int32)
                         W[A[j],n] = 0
                         W[B[r],n] = 1;
             
@@ -1458,7 +1458,7 @@ def metis_one_level(rr,cc,vv,rid,weights):
     nnz = rr.shape[0]
     N = rr[nnz-1] + 1
 
-    marked = np.zeros(N, np.bool)
+    marked = np.zeros(N, bool)
     rowstart = np.zeros(N, np.int32)
     rowlength = np.zeros(N, np.int32)
     cluster_id = np.zeros(N, np.int32)

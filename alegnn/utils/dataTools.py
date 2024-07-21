@@ -820,11 +820,11 @@ class Authorship(_dataForClassification):
                                      np.zeros(nTestRest)), axis = 0)
         # And assign them to the required attribute samples
         self.samples['train']['signals'] = xTrain
-        self.samples['train']['targets'] = labelsTrain.astype(np.int)
+        self.samples['train']['targets'] = labelsTrain.astype(np.int32)
         self.samples['valid']['signals'] = xValid
-        self.samples['valid']['targets'] = labelsValid.astype(np.int)
+        self.samples['valid']['targets'] = labelsValid.astype(np.int32)
         self.samples['test']['signals'] = xTest
-        self.samples['test']['targets'] = labelsTest.astype(np.int)
+        self.samples['test']['targets'] = labelsTest.astype(np.int32)
         # Create graph
         self.createGraph()
         # Change data to specified type and device
@@ -1278,7 +1278,7 @@ class MovieLens(_data):
         #   new indices (i.e. we didn't drop them)        
         if labelID != 'all':
             # For each of the introduced IDs, check:
-            self.labelID = np.empty(0, dtype = np.int)
+            self.labelID = np.empty(0, dtype = np.int32)
             for i in labelID:
                 # Recall that labelID they start with 1, but indexNodesToKeep
                 # starts with zero
@@ -1360,7 +1360,7 @@ class MovieLens(_data):
         # Save variables
         trainSignals = np.empty([0, nNodes])
         trainLabels = np.empty(0)
-        trainIDs = np.empty(0).astype(np.int)
+        trainIDs = np.empty(0).astype(np.int32)
         while nTrainSoFar < nTrain and rowCounter < nRows:
             # Get the corresponding selected row
             thisRow = selectedMatrix[randPerm[rowCounter], :]
@@ -1406,7 +1406,7 @@ class MovieLens(_data):
         # Save variables
         validSignals = np.empty([0, nNodes])
         validLabels = np.empty(0)
-        validIDs = np.empty(0).astype(np.int)
+        validIDs = np.empty(0).astype(np.int32)
         while nValidSoFar < nValid and rowCounter < nRows:
             # Get the corresponding selected row
             thisRow = selectedMatrix[randPerm[rowCounter], :]
@@ -1452,7 +1452,7 @@ class MovieLens(_data):
         # Save variables
         testSignals = np.empty([0, nNodes])
         testLabels = np.empty(0)
-        testIDs = np.empty(0).astype(np.int)
+        testIDs = np.empty(0).astype(np.int32)
         while nTestSoFar < nTest and rowCounter < nRows:
             # Get the corresponding selected row
             thisRow = selectedMatrix[randPerm[rowCounter], :]
@@ -2056,7 +2056,7 @@ class MovieLens(_data):
                 # of zeroNodes and then reorder the matrix
                 #   Full nodes
                 fullNodes = [n for n in range(thisSignal.shape[1]) if n not in zeroNodes]
-                fullNodes = np.array(fullNodes, dtype=np.int)
+                fullNodes = np.array(fullNodes, dtype=np.int32)
                 #   Complete list of nodes (concatenate them)
                 allNodes = np.concatenate((zeroNodes, fullNodes))
                 #   Reorder the matrix
@@ -3902,7 +3902,7 @@ class Flocking(_data):
             tSnapshots = np.linspace(0, tSamples-1, num = nSnapshots)
             #   This gives us nSnapshots equally spaced in time. Now, we need
             #   to be sure these are integers
-            tSnapshots = np.unique(tSnapshots.astype(np.int)).astype(np.int)
+            tSnapshots = np.unique(tSnapshots.astype(np.int32)).astype(np.int32)
             
             # Directory to save the snapshots
             snapshotDir = os.path.join(saveDir,'graphSnapshots')
@@ -4472,7 +4472,7 @@ class TextDataset(object):
             wc = np.squeeze(np.asarray(wc))
         elif vocab == 'full':
             # Word count with full vocabulary.
-            wc = np.empty(len(self.documents), dtype=np.int)
+            wc = np.empty(len(self.documents), dtype=np.int32)
             for i,doc in enumerate(self.documents):
                 wc[i] = len(doc.split())
         idx = np.argwhere(wc >= nwords).squeeze()
