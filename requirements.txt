@@ -1,0 +1,8 @@
+gensim
+scipy
+scikit-learn
+torch
+torchvision
+torchaudio
+hdf5storage
+matplotlib
